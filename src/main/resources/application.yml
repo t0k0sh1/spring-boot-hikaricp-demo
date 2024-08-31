@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: demo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demo
+    username: postgres
+    password: password
+    hikari:
+      pool-name: spring-boot-hikaricp-demo
+#      connectionTimeout: 20000
+#      minimumIdle: 10
+      maximumPoolSize: 100
+#      initializationFailTimeout: 10
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - prometheus
+logging:
+  level:
+    com.zaxxer.hikari: debug
