@@ -7,10 +7,10 @@ spring:
     password: password
     hikari:
       pool-name: spring-boot-hikaricp-demo
-#      connectionTimeout: 20000
-#      minimumIdle: 10
+      connectionTimeout: 20000
+      minimumIdle: 10
       maximumPoolSize: 100
-#      initializationFailTimeout: 10
+      initializationFailTimeout: 10
   liquibase:
     change-log: classpath:/db/changelog/db.changelog-master.xml
 management:
